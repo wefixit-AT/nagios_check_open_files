@@ -41,14 +41,14 @@ PERCDONE=`echo $PERCDONE_PRE | cut -d. -f1`
 
 if [ $PERCDONE -lt 84 ]; then
     ERROR_CODE=0
-    printf "FILES OK - $PERCDONE %% with $LSOF files open|files=$LSOF;$OPEN_F;$OPEN_F;0\n"
+    printf "FILES OK - $PERCDONE %% with $LSOF files open|files=$LSOF;;;\n"
 else
     if [ $PERCDONE -ge 85 ] && [ $PERCDONE -le 94 ]; then
         ERROR_CODE=1
-    	printf "FILES WARN - $PERCDONE %% with $LSOF files open|files=$LSOF;$OPEN_F;$OPEN_F;0\n"
+    	printf "FILES WARN - $PERCDONE %% with $LSOF files open|files=$LSOF;;;\n"
     elif [ $PERCDONE -ge 95 ]; then
         ERROR_CODE=2
-    	printf "FILES CRIT - $PERCDONE %% with $LSOF files open|files=$LSOF;$OPEN_F;$OPEN_F;0\n"
+    	printf "FILES CRIT - $PERCDONE %% with $LSOF files open|files=$LSOF;;;\n"
   fi
 fi
 
